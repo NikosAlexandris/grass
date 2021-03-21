@@ -46,8 +46,8 @@ def main():
             gcore.fatal(_("Raster map <%s> not found") % map)
 
     try:
-        gcore.write_command('d.text', color='black', size=4, line=1,
-                            stdin="CORRELATION")
+        gcore.write_command('d.text', color='blue', size=2, line=1,
+                            stdin="Correlation")
     except CalledModuleError:
         return 1
     
@@ -63,7 +63,7 @@ def main():
                 color = colors[0]
                 colors = colors[1:]
                 colors.append(color)
-                gcore.write_command('d.text', color=color, size=4, line=line,
+                gcore.write_command('d.text', color=color, size=2, line=line,
                                     stdin="%s %s" % (i, j))
                 line += 1
 
